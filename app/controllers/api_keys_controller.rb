@@ -2,7 +2,7 @@ class ApiKeysController < ApplicationController
   include ApiKeyAuthenticatable 
 
 # Require token authentication for index                             
-  prepend_before_action :authenticate_with_api_key!, only: [:index]
+  prepend_before_action :authenticate_with_api_key!, only: [:index :destroy]
 
 # Optional token authentication for logout                           
   prepend_before_action :authenticate_with_api_key, only: [:destroy]
