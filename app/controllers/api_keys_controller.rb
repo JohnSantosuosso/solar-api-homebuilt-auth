@@ -8,6 +8,7 @@ class ApiKeysController < ApplicationController
   prepend_before_action :authenticate_with_api_key, only: [:destroy]
 
   def index
+    render json: current_bearer.api_keys 
   end
  
   def create
