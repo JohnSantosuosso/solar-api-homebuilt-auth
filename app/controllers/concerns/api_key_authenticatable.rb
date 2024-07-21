@@ -12,11 +12,6 @@ module ApiKeyAuthenticatable
     @current_bearer = authenticate_or_request_with_http_token &method(:authenticator)
   end
  
-  # Use this for optional API key authentication
-  def authenticate_with_api_key
-    @current_bearer = authenticate_with_http_token &method(:authenticator)
-  end
- 
   private
  
   attr_writer :current_api_key, :current_bearer
